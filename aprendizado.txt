@@ -1,0 +1,162 @@
+Javascript é uma linguagem dinâmica
+
+documentação: w3schools, mozilla e ecmascript.
+
+node js é um ambiente de execução, usando o motor v8 que interpreta e compila o código, no fim das contas o node js simula oque o devtools faz.
+----------------------------------------------------------
+metodos nativos js:
+
+string.charAt(elemento) - caça a in
+string.toUpperCase() - transforma a string em maiusculas
+string.toLowerCase() - transforma a string em minusculas
+string.match() - 
+string.replace() - substitui caracteres
+string.slice() - retorna caracteres de um intervalo de endereços
+string.split() - separa elemento de uma array por um determinado caracter
+
+vetor.push(novo_elemento) - adiciona elemento ao final do vetor
+vetor.unshift(novo_elemento) - adiciona elemento ao inicio de um vetor
+vetor.pop() - remove ultimo elemento (pode retornar)
+vetor.shift - remove primeiro elemento (pode retornar)
+delete vetor[i] - remove o conteudo daquele elemento
+vetor.slice(i,j) - retorna determinado intervalo do vetor
+vetor instanceOf Array - retorna boolean, se é vetor ou nao
+vetor.indexOf(elemento) - caça a index de um caracter a partir do inicio
+vetor.lastIndexOF() - caça a index de um caracter commeçando do ultimo caracter
+
+numero.toString() - transforma para string
+numero.toFixed() - arredonda as casas, porém retorna uma string
+
+funções nativas do js:
+typeof()
+
+atributos()
+vetor.length
+string.length
+
+
+------------------------------------------------------
+
+objetos para manipulações de numero:
+object Number
+Number.isInteger(numero)
+Number.isFloat(numero)
+object math
+Math.floor(numero)
+Math.ceil(numero)
+----------------------------------------------------------
+objetos: possuem estrutura usando chaves {}
+exemplo de objeto criado:
+const pessoa ={
+    nome: 'Caio';
+    sobrenome: 'Duarte';
+}
+exemplo de como acessar
+console.log(pessoa.nome) //imprime: Caio
+
+além disso, objetos podem conter diferentes tipos de dados no mesmo objeto.
+
+const cidadao = {
+    nome: 'Sergio',
+    idade: 32,
+    ativo: False,
+    profissão: Null
+}
+
+funções que criam objetos sã chamada de factorys.
+
+atribuir por desestruturação
+let {nome: name, idade} = cidadao;
+console(name,idade) //imprime: 'Sergio' 32
+---------------------------------------------------------
+let != var != const
+
+let - serve para declarações comuns (mutavel)
+var - serve para redeclarar váriaveis (mutavel)
+const - serve para declarar um valor constante (imutavel), porém em objetos você consegue trocar o conteudo por formas de não atribuição
+
+let consegue ser redeclarada dentro de blocos sem afetar a variavel original
+var consegue ser redeclarada dentro de functions sem afetar a variavel original
+
+--------------------------------------------------------------
+tipos primitivos conhecitos: String(texto), number(inteiro, flutuante), boolean (True, False), symbol(...)
+outros tipos, porém esquisitos: null(object), undefined(sem atributo, inutilizavel, não chega a ser null), array(object), NaN(apesar de possuir a tipagem number, não é um number)
+
+
+trocar tipagem:
+Number(texto) -> de texto para numero
+ParseFloat(texto/inteiro) -> de texto para float
+ParseInt(texto/float) -> de texto/float para inteiro
+
+ou até mesmo atribuir valor de outro tipo.
+exemplo: let nums = [1,2,4]
+nums = 124
+
+console.log(typeof(100/0)) // infinity
+
+troca de valores:
+valores primitivos - por cópia - String, Number, boolean, undefined, null, bigint, symbol
+valores referência - array, object, function
+----------------------------------------------------------------------------------
+vetor 
+como passar:
+let a = [1,2,3]
+
+let b = [...a] //operador spread
+let [c, ...resto] = a //operador rest
+
+atribuir por desestruturaçção
+-------------------------------------------------------------------
+alert() - serve para imprimir no navegador de forma simples
+prompt() - serve para ler do navegador de forma simples
+confirm() - serve como um choice do navegador de forma simples
+
+----------------------------------------------------------------------
+short- circuit
+ * * && - e - basta uma falsa pra imrpimir falsa, e um cadeia de verdades pra imprimr a ultima verdade
+
+    //console.log(true  && false && 'joao') //imprime false
+    //console.log(false  && 0 && 'joao') //imprime false
+    //console.log(true  && 1 && 'joao') //imprime joao q é verdade
+
+
+ * * || - ou - basta uma verdade pra imprimir a primeira verdade, e uma cadeia de falsas pra imprimir a ultima falsa
+
+     // console.log(null || 1 || false) //imprime 1 q é verdade
+    // console.log(false  || 0 || 'joao') //imprime joao q é verdade
+    // console.log( null || NaN || 0) //imprime 0 q é falso
+ ------------------------------------------------------------------------------------------------
+
+função geradora
+
+objetos que recebem o new, um exemplo disso é o objeto date:
+
+
+-------------------------------------------------------------------------------------------
+
+função - não vem de objeto
+método - vem de objeto
+
+não é boas práticas:
+usar == e !=
+usar var
+usar vetor com diferentes tipos de dados
+imprimir incremento direto.
+
+boas práticas: chamar evento de: 'event' ou 'e'
+fazer uma função para cada funcionalidade do código, leve isso extremamente a sério.
+
+--------------------------------------------------------------------------------------------
+switch case:
+
+
+-------------------------------------------------------------------------------------------
+DOM (document object model), mozilla, documentação: https://developer.mozilla.org/pt-BR/docs/Glossary/DOM
+DOM é uma API na qual JS/TS tem suporte para manipulá-lo, porém NODE-JS não tem suporte para roda-lo,
+para rodar, somente no nagevador. o DOM é modelo que serve para transformar documentos(HTML,XML) em objetos afim.
+---------------------------------------------------------------------------------------------
+tipos de for:
+for normal - manipulação total(endereços, valores, oque quiser.)
+for in - mexer com os endereços do array - o unico que consegue iterar objeto
+for of - mexer com os valores do array
+vetor.forEach
