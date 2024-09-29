@@ -13,7 +13,7 @@ string.match() -
 string.replace() - substitui caracteres
 string.slice() - retorna caracteres de um intervalo de endereços
 string.split() - separa elemento de uma array por um determinado caracter
-
+string.trim() - remove os espaços em excesso de uma string.
 vetor.push(novo_elemento) - adiciona elemento ao final do vetor
 vetor.unshift(novo_elemento) - adiciona elemento ao inicio de um vetor
 vetor.pop() - remove ultimo elemento (pode retornar)
@@ -138,6 +138,7 @@ função - não vem de objeto
 método - vem de objeto
 
 não é boas práticas:
+mostrar o erro que seu sistema deu qunado fazer o tratamento de erros.
 usar == e !=
 usar var
 usar vetor com diferentes tipos de dados
@@ -154,9 +155,23 @@ switch case:
 DOM (document object model), mozilla, documentação: https://developer.mozilla.org/pt-BR/docs/Glossary/DOM
 DOM é uma API na qual JS/TS tem suporte para manipulá-lo, porém NODE-JS não tem suporte para roda-lo,
 para rodar, somente no nagevador. o DOM é modelo que serve para transformar documentos(HTML,XML) em objetos afim.
+
+manipulações de classe com DOM:
+classList - mexe co  a class da tag
+classList.add('nomeClasse') - adiciona classe
+classList.remove('nomeClasse') - remove a classe
+classList.contains('nomeClass') - retorna true se existir uma classe com esse nome na tag.
+
+
 ---------------------------------------------------------------------------------------------
 tipos de for:
 for normal - manipulação total(endereços, valores, oque quiser.)
 for in - mexer com os endereços do array - o unico que consegue iterar objeto
 for of - mexer com os valores do array
-vetor.forEach
+vetor.forEach - método pra iterar dentro do vetor
+----------------------------------------------------------------------------------------------
+break - serve para quebrar o código.
+continue - serve para pular a iteração.
+----------------------------------------------------------------------------------------
+eventos em JS/TS
+event.target - captura todos os eventos  disparados dentro do código.

@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+:root {
+  --primary-color: rgb(24, 24, 24);
+  --second-color: rgb(41, 41, 41);
+  --text: rgb(231, 231, 231);
+}
+
+* {
+  box-sizing: border-box;
+  outline: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--primary-color);
+  font-family: 'Open sans', sans-serif;
+  font-size: 1.3em;
+  line-height: 1.5em;
+  color: var(--text);
+}
+
+.container {
+  max-width: 740px;
+  margin: 50px auto;
+  background: var(--primary-color);
+  padding: 20px;
+  border: 1px solid var(--text);
+  border-radius: 10px;
+  box-shadow: 4px 4px black;
+}
+
+form input, form label, form button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+form input {
+  font-size: 24px;
+  height: 50px;
+  padding: 0 20px;
+}
+
+form input:focus {
+  outline: 1px solid var(--primary-color);
+}
+
+form button {
+  border: none;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  height: 50px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+form button:hover {
+  background: var(--primary-color-darker);
+}
+input{
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  background: var(--primary-color);
+  color: var(--text);
+  border: 1px solid var(--text);
+}
+.inputs{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+button{
+  border-radius: 10px;
+  background: rgb(15, 166, 226);
+  border:none;
+  padding: 10px;
+  color: var(--text);
+  font-weight: bold;
+}
+button:hover{
+  background: rgb(0, 105, 146);
+  border: none;
+  box-shadow: none;
+}
+.item-tarefa{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.checkbox-tarefa{
+  width: 15px;
+}
+.apagar{
+  background: rgb(230, 64, 64);
+}
+.apagar:hover{
+  background: rgb(179, 42, 42);
+}
