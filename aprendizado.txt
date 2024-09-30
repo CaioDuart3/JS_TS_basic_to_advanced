@@ -45,7 +45,9 @@ object math
 Math.floor(numero)
 Math.ceil(numero)
 ----------------------------------------------------------
-objetos: possuem estrutura usando chaves {}
+objetos
+
+possuem estrutura usando chaves {}
 exemplo de objeto criado:
 const pessoa ={
     nome: 'Caio';
@@ -68,6 +70,41 @@ funções que criam objetos sã chamada de factorys.
 atribuir por desestruturação
 let {nome: name, idade} = cidadao;
 console(name,idade) //imprime: 'Sergio' 32
+
+atribuição por desestruturação em objetos:
+
+const carro = {
+    nome: 'Gol',
+    ano: 2018,
+    marcaCarro: 'Volkswagen',
+    motor:{
+        marcaMotor: 'ABB eletrics',
+        nome:'V8',
+        ano:2012,
+    }
+}
+
+//* desestruturando em variaveis
+const {
+    nome: carroGol, //atribuição renomeando
+    ano = 2020, //atribuição mudando valor de chave (funciona somente se a variavel não existir, tornando se um valor default) 
+    marcaCarro, //atribuição normal
+    cor ='Preto', //atribuição adicionando nova variavel
+    motor, //atribuição de objeto inteiro
+    } = carro
+console.log(carroGol,ano, marcaCarro,cor, motor)
+
+uso do this:
+const pessoa = {
+    nome: 'Maria',
+    idade: 30,
+    apresentar: function() {
+        console.log(`Olá, meu nome é ${this.nome} e tenho ${this.idade} anos.`);
+    }
+};
+
+pessoa.apresentar(); // Saída: Olá, meu nome é Maria e tenho 30 anos.
+
 ---------------------------------------------------------
 let != var != const
 
@@ -105,7 +142,11 @@ let a = [1,2,3]
 let b = [...a] //operador spread
 let [c, ...resto] = a //operador rest
 
-atribuir por desestruturaçção
+atribuir por desestruturação em array:
+
+let [um, ,tres] = a
+//um = 1
+//tres = 3
 -------------------------------------------------------------------
 alert() - serve para imprimir no navegador de forma simples
 prompt() - serve para ler do navegador de forma simples
@@ -127,10 +168,8 @@ short- circuit
     // console.log( null || NaN || 0) //imprime 0 q é falso
  ------------------------------------------------------------------------------------------------
 
-função geradora
-
+função geradora:
 objetos que recebem o new, um exemplo disso é o objeto date:
-
 
 -------------------------------------------------------------------------------------------
 
@@ -146,11 +185,56 @@ imprimir incremento direto.
 
 boas práticas: chamar evento de: 'event' ou 'e'
 fazer uma função para cada funcionalidade do código, leve isso extremamente a sério.
+----------------------------------------------------------------------------------------------
+função, as funções em js por padrão são hoisting, ou seja, tanto o node qnd o browser fazem com que funções declaradas no códigos tenha prioridade maxima dentro do codigo, permitindo assim chamar funções antes delas serem criadas no código.
+
+tipos de funções:
+função classsica: 
+function soma(a,b){
+    return a+b;
+}
+funções anonimas, funções que não precisam ser nomeadas, mas precisar estar contids em algo:
+const subtrair = function(a,b){
+    return a-b;
+}
+arrow function, funções que são armazenadas e mais rapido de escrever:
+const raiz = (num) => num**0.5;
+
+
+arguments - funciona na classica e anonima somente.
+
+função fechamento - pois ela fecha mais de uma vez.
+
+//com arrow functions:
+const criarMultiplicador = (multiplicador) => (num)=> num * multiplicador;
+
+const quadriplica = criarMultiplicador(4) //cria um quadriplicador;
+let resultado = quadriplica(3);
+console.log(resultado);
+
+//functions classicas
+function raiz(indice){
+    //function anonima
+    return function(radical){return radical**(1/indice)}
+};
+
+const indice3 = raiz(3)  // elevar um numero a 1/3,
+resultado = indice3(8); //2*2*2=8;
+console.log(resultado);
 
 --------------------------------------------------------------------------------------------
 switch case:
-
-
+exemplo:
+    switch(dia){
+        case 0: return 'Domingo'; //pode ser substituído por break, a ideia é que o switch se encerre, return ou break servem pra isso.
+        case 1: return 'Segunda-feira';
+        case 2: return 'Terça-feira';
+        case 3: return 'Quarta-feira';
+        case 4: return 'Quinta-feira';
+        case 5: return 'Sexta-feira';
+        case 6: return 'Sábado';
+        default: return 'data inválida.'
+    }
 -------------------------------------------------------------------------------------------
 DOM (document object model), mozilla, documentação: https://developer.mozilla.org/pt-BR/docs/Glossary/DOM
 DOM é uma API na qual JS/TS tem suporte para manipulá-lo, porém NODE-JS não tem suporte para roda-lo,
@@ -172,6 +256,26 @@ vetor.forEach - método pra iterar dentro do vetor
 ----------------------------------------------------------------------------------------------
 break - serve para quebrar o código.
 continue - serve para pular a iteração.
+exemplo de código:
+const nums = [1,2,3,4,5,6,7,8,9];
+let i =0;
+while(i !== nums.length){
+    i++;
+    if(nums[i] === 4){
+        continue; //pula o número quatro.
+    }
+    console.log(i);
+    if(nums[i]===8){
+        break; //para o código quando chegar no oito.
+    }
+}
 ----------------------------------------------------------------------------------------
 eventos em JS/TS
 event.target - captura todos os eventos  disparados dentro do código.
+
+você utiliza a manipulação por evento ao colocar esse parametro no addEventListener, exemplo:
+
+document.addEventListener('click', (event)=> {
+    console.log(event.target) //este código irá imprimir eventos de cliques disparados.
+})
+------------ ------------------------------------------------------------------------------

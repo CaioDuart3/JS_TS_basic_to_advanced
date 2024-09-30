@@ -3,10 +3,10 @@ let i =0;
 while(i !== nums.length){
     i++;
     if(nums[i] === 4){
-        continue;
+        continue; //pula o número quatro.
     }
     console.log(i);
     if(nums[i]===8){
-        break;
+        break; //para o código quando chegar no oito.
     }
 }
