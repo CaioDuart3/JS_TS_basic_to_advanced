@@ -1,15 +1,13 @@
-//calculadora feita usando factory function:
+//calculadora utilizando função construtorua:
 
-function calculadora(){
-    
-    return {
-        display: document.querySelector('.display'),
+function Calculadora(){
+        this.display = document.querySelector('.display');
 
-        iniciar(){
-            this.calcular()
-        },   
+        this.iniciar = () =>{
+            this.calcular();
+        }; 
 
-        mostrarResultado(){
+        this.mostrarResultado = () => {
             try{
                 if(this.display.value && this.display.value.search(/[a-zA-Z]/) === -1){
                     this.display.value = eval(this.display.value)
@@ -22,11 +20,11 @@ function calculadora(){
                 alert('cálculo inválido, digite sua expressão novamente.')
                 this.display.value = '';
             }
-        },
+        };
 
-        calcular(){
+        this.calcular = () => {
             document.addEventListener('click', (e)=>{
-                elemento = e.target
+                elemento = e.target;
                 if(elemento.classList.contains('btn-num')){
                     this.display.value += elemento.innerText;
                 }
@@ -45,9 +43,7 @@ function calculadora(){
                     this.mostrarResultado()
                 }
             })
-        },
-
-    }
+        };
 }
-const calcula = calculadora();
+const calcula = new Calculadora();
 calcula.iniciar();

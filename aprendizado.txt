@@ -23,16 +23,16 @@ vetor.slice(i,j) - retorna determinado intervalo do vetor
 vetor instanceOf Array - retorna boolean, se é vetor ou nao
 vetor.indexOf(elemento) - caça a index de um caracter a partir do inicio
 vetor.lastIndexOF() - caça a index de um caracter commeçando do ultimo caracter
-vetor.match(/[a-z]/g) - expressões regulares, imprime um vetor com os caracteres minusculos
-vetor.search('Duart') - busca o caracter/elemento e imprime o endereço: 5, se n tiver imprime -1 
+string.match(/[a-z]/g) - expressões regulares, imprime um vetor com os caracteres minusculos
+string.search('Duart') - busca o caracter/elemento e imprime o endereço: 5, se n tiver imprime -1 
 string.replace(/a/g, 'o') - troca os caracteres, o g faz com que seja todos os caracteres 'a' trocados por 'o'.
 
 numero.toString() - transforma para string
 numero.toFixed() - arredonda as casas, porém retorna uma string
 
 funções nativas do js:
-typeof()
-
+typeof() - vê a tipagem da variavel.
+eval() - executa uma string como código JS e retorna o resultado (tem q tomar cuidado e ser tratado antes de utilizado).
 atributos()
 vetor.length
 string.length

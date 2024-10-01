@@ -10,6 +10,8 @@ function soma(a,b){
 }
 /*
 * utlidades da função clássica:
+-consegue ser função construtora
+-consegue ser função fabrica.
 -consegue utilizar o arguments
 -consegue ser função fechamento.
 ! NÃO consegue lembrar que o this é o do primeiro objeto chamado.
@@ -21,22 +23,27 @@ const subtrair = function(a,b){
 }
 /*
 * utlidades da função anônima:
+-consegue ser função fabrica.
 -consegue ser autoevocada 
 -consegue utilizar o arguments
 -consegue ser função fechamento.
 -consegue ser armazenada em um variavel
 -dependendo do contexto não precisa ser nomeada, apenas chamada e utilizada.
+! NÃO consegue ser função construtora.
 ! NÃO consegue lembrar que o this é o do primeiro objeto chamado.
 */
 // ? arrow function, funções que são armazenadas e mais rapido de escrever:
 const raiz = (num) => num**0.5;
 /*
 * utlidades da arrow functions:
+-consegue ser função fabrica.
 -consegue ser autoevocada 
 -consegue ser função fechamento.
 -consegue ser armazenada em um variavel
 -dependendo do contexto não precisa ser nomeada, apenas chamada e utilizada.
 -consegue lembrar que o this é o do primeiro objeto chamado.
+- quanto tem só uma linha NÃO precisa dar return e nem usar chaves.
+! NÃO consegue ser função construtora, consegue apenas ser utilizada em metodos internos da construtora.
 ! NÃO consegue utilizar o arguments
 */
 
@@ -176,6 +183,15 @@ f1(function(){
     console.log(pessoa1.imc);
 })()
 
+// * funções contrutoras.
+// tem um objetivo bastante similar, as factories, q é construir objetos.
+//seus objetos DEVEM receber o new, um exemplo disso é o objeto date, q é nativo do js.
+//exemplo de objeto criado a partir de uma construtora:
+
+
+
+
 // * função geradora:
 
-//objetos que recebem o new, um exemplo disso é o objeto date:
+
+
