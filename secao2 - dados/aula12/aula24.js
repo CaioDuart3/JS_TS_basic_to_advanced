@@ -22,10 +22,10 @@ let  nome = 'Caio Duart';
 
 // console.log(nome.lastIndexOf('r', 9)) //imprime: 8, caçando a partir da index 3
 
-// console.log(nome.match(/[a-z]/g)) //expressões regulares, imprime um vetor com os caracteres minusculos
-console.log(nome.search('Duart')) //busca o caracter, imprime: 5 
-// console.log(nome.replace(/a/g, 'o')) //troca os caracteres, o g faz com que seja em todos os caracteres a
+//console.log(nome.match(/[a-z]/g)) //expressões regulares, imprime um vetor com os caracteres minusculos
+// console.log(nome.search('Duart')) //busca o caracter, imprime: 5 
+console.log(nome.replace(/a/g, 'o')) //troca os caracteres, o g faz com que seja em todos os caracteres a
 
-let buscar = 'Duart'
-console.log(nome.slice(nome.search(buscar), buscar.length ))
-console.log(nome.slice(-3))
+// let buscar = 'Duart'
+// console.log(nome.slice(nome.search(buscar), buscar.length ))
+// console.log(nome.slice(-3))

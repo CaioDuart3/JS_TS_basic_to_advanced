@@ -1,10 +1,10 @@
 //arguments funciona apenas em funções que tem a palavra function, portanto arrow functions n funciona
 //arguments é um objeto.
-// function numeros(a,b,c) {
-//     console.log(`a: ${a}, b: ${b}, c: ${c}`);
-//     for(let i in arguments)console.log(arguments[i]);
-// }
-// numeros(1,2,5,2,6,3,9);
+function numeros() {
+    console.log(arguments);
+}
+numeros(1,2,3,4); // [Arguments] { '0': 1, '1': 2, '2': 3, '3': 4 }
+
 
 // const soma = function(a,b=2,c=4){
 //     console.log(a+b+c);
