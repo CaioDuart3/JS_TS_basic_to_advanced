@@ -9,6 +9,21 @@ function calculadora(){
             this.calcular()
         },   
 
+        limpaDisplay(){
+            this.display.value = '';
+            this.display.focus();
+        },  
+
+        adicionaExpressao(elemento){
+            this.display.value += elemento;
+            this.display.focus();
+        },
+
+        voltar(){
+            this.display.value = this.display.value.slice(0,-1);
+            this.display.focus();
+        },
+
         mostrarResultado(){
             try{
                 if(this.display.value && this.display.value.search(/[a-zA-Z]/) === -1){
@@ -26,16 +41,16 @@ function calculadora(){
 
         calcular(){
             document.addEventListener('click', (e)=>{
+
                 elemento = e.target
                 if(elemento.classList.contains('btn-num')){
-                    this.display.value += elemento.innerText;
-                    this.display.focus();
+                    this.adicionaExpressao(elemento.innerText)
                 }
                 if(elemento.classList.contains('btn-clear')){
-                    this.display.value = '';
+                    this.limpaDisplay()
                 }
                 if(elemento.classList.contains('btn-back')){
-                    this.display.value = this.display.value.slice(0,-1);
+                    this.voltar()
                 }
                 if(elemento.classList.contains('btn-eq')){
                     this.mostrarResultado()
