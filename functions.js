@@ -54,8 +54,14 @@ function numeros() {
 }
 numeros(1,2,3,4); // [Arguments] { '0': 1, '1': 2, '2': 3, '3': 4 }
 
+//* dá pra utilizar rest, quando você quer ultrapassar os parametros ja pre definidos também:
 
-//função fechamento - pois ela fecha mais de uma vez.
+function imprimir(a, b, ...resto){
+    console.log(a,b,resto); //resto vem como um vetor recebendo os valores que vem alem de a e b;
+}
+imprimir(1,2,3,4,5,6);
+
+// * função fechamento(closure) - pois ela fecha mais de uma vez e você consegue utilizad um função como se fosse várias.
 
 //com arrow functions:
 const criarMultiplicador = (multiplicador) => (num)=> num * multiplicador;
@@ -74,7 +80,7 @@ const indice3 = raiz(3)  // elevar um numero a 1/3,
 resultado = indice3(8); //2*2*2=8;
 console.log(resultado);
 
-// * função closure é um função que lembra quando e onde foi criada sabendo se distinguir de outras versões dela criada, pois possui escopo de bloco local(lexico):
+// além do mais a função closure é uma função que lembra quando e onde foi criada sabendo se distinguir de outras versões dela criada, pois possui escopo de bloco local(lexico):
 
 const contador = ()=>{
     let count = 0;
@@ -188,8 +194,35 @@ f1(function(){
 //seus objetos DEVEM receber o new, um exemplo disso é o objeto date, q é nativo do js.
 //exemplo de objeto criado a partir de uma construtora:
 
+//arrow functions e funções anonimas não conseguem cria-las.
+function Pessoa(nome, sobrenome){
+    //declarar atributos/metodos sem o this torna-os privados:
+    const cpf = '123.456.789-01';
+    //para pegar dado privado:
+    this.getCpf = cpf;
+    //o uso de this faz deles atributos/metodos publicos:
+    this.nome = nome;
+    this.sobrenome =sobrenome;
+    this.sobre = () => {return `meu nome é ${this.nome} ${this.sobrenome}`};
+}
 
+const p1 = new Pessoa("Caio", "Duarte"); //funções construtora são marcadas principalmente pelo uso de new
+//new cria objetos.
+const p2 = new Pessoa("Mayara", "Silva");
+console.log(p1.sobre());
 
+//* função recursiva:
+//são funções que se chamam dentro de seu proprio escopo, utilizadas para repetir determinada ação, muito semelhante ao for, while.
+
+function simulandoFor(init, limit , increment){
+    if(init < limit){
+        console.log(init);
+        init+= increment;
+        simulandoFor(init,limit,increment);
+    }
+    return;
+}
+simulandoFor(0 ,10, 1, 2); //immprime de 0 a 9 
 
 // * função geradora:
 
