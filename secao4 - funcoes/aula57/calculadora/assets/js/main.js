@@ -29,6 +29,7 @@ function calculadora(){
                 elemento = e.target
                 if(elemento.classList.contains('btn-num')){
                     this.display.value += elemento.innerText;
+                    this.display.focus();
                 }
                 if(elemento.classList.contains('btn-clear')){
                     this.display.value = '';
