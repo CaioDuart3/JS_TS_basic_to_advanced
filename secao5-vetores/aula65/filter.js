@@ -41,5 +41,6 @@ const nomes = [
     {nome:'Ludmila', idade:18, genero:'F'},
 ];
 
-let filtroGeneroIdade = nomes.filter(objeto => objeto.idade > 19 && objeto.genero === 'F');
-console.log(filtroGeneroIdade);
+let filtroGeneroIdade = nomes.filter(objeto => objeto.idade > 19 && objeto.genero === 'F'); //retorna o vetor com o filtro de idade e genero aplicado.
+//console.log(filtroGeneroIdade);
+console.log(nomes);
