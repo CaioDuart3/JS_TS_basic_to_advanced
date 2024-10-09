@@ -1,0 +1,1 @@
+//métodos úteis para utilizar com objetos.
