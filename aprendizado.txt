@@ -111,6 +111,13 @@ ex:
 objeto.bind().
 pessoa.apresentar(); // Saída: Olá, meu nome é Maria e tenho 30 anos.
 
+Object.assign(obj_destino, objeto_p_adicionar);
+Object.keys(obj);
+Object.values(obj);
+Object.entries(obj);
+Object.freeze(obj);
+Object.getOwnPropertyDescriptor(produto, 'mercado')
+
 ---------------------------------------------------------
 let != var != const
 
