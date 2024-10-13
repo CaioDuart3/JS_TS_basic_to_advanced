@@ -47,6 +47,7 @@ const raiz = (num) => num**0.5;
 -apesar de ser possivel criar função geradora, exige uma qtd de linhas maior q as demais funções e não é tão viável.
 ! NÃO consegue ser função construtora, consegue apenas ser utilizada em metodos internos da construtora.
 ! NÃO consegue utilizar o arguments
+! Não consegue ser utilizada com o this
 */
 
 // * arguments - funciona na função classica e anônima somente.

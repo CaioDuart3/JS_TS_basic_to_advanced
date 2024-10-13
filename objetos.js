@@ -50,6 +50,7 @@ function pessoa (nome, sobrenome){
 }
 
 // ? função construtora:
+// funções construtoruas não precisam retornar.
 function Pessoa(nome,sobrenome){ //funções construtoras levam nomes que iniciam com  maiuscula. 
 
     let cpf = `123.456.789-04`; //atributo privado 
@@ -153,4 +154,36 @@ console.log(produto1.estoque); //imprime: 4 pega o atributo estoque que está pr
 
 produto1.estoque =10;
 console.log(produto1.estoque); //imprime: 10;
+
+
+// * prototypes
+
+//prototipos é modelo de objeto que é pai de todos os objetos criados, ele é como se fosse umo modelo
+//padrão previsamente ja criado pelo JS.
+
+
+//o intuito do prototype é generalizar algum método que tem em comum nos nos objetos,
+//com o intuito de não precisar ser declarado em toda criação.
+
+
+//prototype === __proto__  -> true
+
+// ? exemplo com construtora:
+function Pessoa(nome, sobrenome){
+    this.nome = nome;
+    this.sobrenome = sobrenome;
+}
+
+Pessoa.prototype.falarNome = function(){
+    return `meu nome é ${this.nome} ${this.sobrenome}`;
+}
+
+const p1 = new Pessoa('Caio', 'Duarte');
+const p2 = new Pessoa('Ronaldo', 'Fenomeno');
+
+
+
+
+
+
 
